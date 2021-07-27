@@ -4,7 +4,9 @@
   <SelfInstruction />
   <TitleSection title="工作經驗"/>
   <section class="content">
+    <Experience />
   </section>
+  <TitleSection title="Github"/>
 </template>
 
 <script lang="ts">
@@ -13,6 +15,7 @@ import Banner from './components/Banner.vue'
 import BigBackground from './components/BigBackground.vue'
 import SelfInstruction from './components/SelfInstruction.vue'
 import TitleSection from './components/TitleSection.vue'
+import Experience from './components/Experience.vue'
 export default defineComponent({
   name: 'App',
   components: {
@@ -20,6 +23,7 @@ export default defineComponent({
     BigBackground,
     TitleSection,
     SelfInstruction,
+    Experience,
   },
 });
 </script>
@@ -30,7 +34,7 @@ export default defineComponent({
   font-family: Roboto,sans-serif !important;
 }
 .content{
-  height: 1000px;
+  margin-bottom: 100px;
   max-width: 100%;
   margin: 0;
   z-index: 1;

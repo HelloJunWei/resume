@@ -9,18 +9,17 @@ export default defineComponent({
     }
   },
   render(context: any) {
-    console.log(context.title)
-    return  h('div',{ class: 'title'}, [...context.title])
+    return  h('div',{ class: 'section-title'}, [...context.title])
   }
 })
 
 </script>
 
 <style scoped>
-.title {
+.section-title {
   margin: 100px 0;
   text-align: center;
   color: #ffff;
-  font-size: 70px;
+  font-size: 3.5rem; 
 }
 </style>

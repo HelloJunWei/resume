@@ -1,0 +1,36 @@
+[
+  {
+    "job_title": "Aimm - 現代美緣數位科技股份有限公司, Software engineer, May 2017 ~ 現在",
+    "sub_title": [
+      {
+        "title": "前端開發經驗",
+        "job": [
+          "使用 nuxt 重構 web app (Jquery + bootstrap)",
+          "使用 webpack 做 code-splitting，壓縮檔案，HTTP快取來優化client-side載入速度",
+          "使用 prerender 進行官網 SEO 優化以及i18n實作多語言官網",
+          "利用Rich editor 完成合約編輯系統，以及線上簽署合約功能",
+          "優化官網讀取速度(http2, gzip, 圖片優化webp, cache)",
+          "參與從零到有開發流程 負責前後端架構規劃，獨立整合前後端開發，前端Vue，以及後端 Node.js/MySQL建置CRM. 系統開發"
+        ]
+      },
+      {
+        "title": "後端開發經驗",
+        "job": [
+          "利用Git Hook 建立簡單 continuous delivery 流程，部署e2e test",
+          "串接綠界以及 stripe 金流作為公司交易流程",
+          "串接 zoom 方便與客戶溝通，以及其他第三方服務(google, Facebook, mailjet, etc....)",
+          "管理公司 cloud infrastructure (AWS, Cloudflare, etc)",
+          "重新設計公司 Dating app 配對演算法"
+        ]
+      },
+      {
+        "title": "APP開發經驗",
+        "job": [
+          "利用 flutter 開發 app 重構原本 webview app",
+          "開發 in app purchase 功能，包括消耗型，以及訂閱型產品( ios, android)",
+          "串接 Sign in with Apple 使其通過 App store 審核"
+        ]
+      }
+    ]
+  }
+]
