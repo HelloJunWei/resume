@@ -1,45 +1,49 @@
 <template>
-  <div id="tsparticles">
-  </div>
-  <div class="banner">
-   reqeqweqwk 
-  </div>
-  <img alt="vue logo" src="./assets/logo.png">
+  <BigBackground />
+  <Banner />
+  <SelfInstruction />
+  <TitleSection title="工作經驗"/>
+  <section class="content">
+  </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { tsParticles } from 'tsparticles';
+import Banner from './components/Banner.vue'
+import BigBackground from './components/BigBackground.vue'
+import SelfInstruction from './components/SelfInstruction.vue'
+import TitleSection from './components/TitleSection.vue'
 export default defineComponent({
   name: 'App',
-  mounted() {
-    tsParticles
-    .loadJSON("tsparticles", "static/particles.json")
-    .then((container) => {
-      console.log("callback - tsparticles config loaded" + container);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-
-  }
+  components: {
+    Banner,
+    BigBackground,
+    TitleSection,
+    SelfInstruction,
+  },
 });
 </script>
 
 <style>
 #app {
   margin: 0;
+  font-family: Roboto,sans-serif !important;
 }
-#tsparticles {
-  z-index: -10px;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: #323840;
-}
-.banner{
-  width: 300px;
-  height: 100vh;
-  background-color: white;
+.content{
+  height: 1000px;
+  max-width: 100%;
+  margin: 0;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #E2DFDA;
+  background-size: contain;
+  background-attachment: fixed;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  background-position: center center;
+  background-repeat: repeat-y;
+  padding-bottom: 110px;
+  background-image: url('./assets/img/price.svg');
 }
 </style>
