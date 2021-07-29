@@ -31,7 +31,9 @@ export default defineComponent({
     GithubPage
   },
   setup () {
-    AOS.init()
+    AOS.init({
+      duration: 600,
+    })
   }
 });
 </script>
