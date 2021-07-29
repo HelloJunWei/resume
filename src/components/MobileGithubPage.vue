@@ -36,7 +36,6 @@ export default defineComponent({
             delay: 1500,
           }
         })
-        console.log(swiper.autoplay)
       }, 500)
     }
 

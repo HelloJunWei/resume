@@ -5,7 +5,7 @@
   </section>
 </template>
 <script lang="ts">
-import { defineComponent, ref, provide  } from 'vue';
+import { defineComponent, ref, provide, onMounted, onDeactivated  } from 'vue';
 import { getMyRepo, GithubData } from '../api';
 import DesktopGithubPage from './DesktopGithubPage.vue'
 import MobileGithubPage from './MobileGithubPage.vue'
@@ -32,11 +32,22 @@ export default defineComponent({
         })
       })
     }
-
+    
     init()
 
     provide('openLink', (url: string) => {
       window.open(url)
+    })
+    const resize = () => {
+      width.value = window.innerWidth
+    }
+
+    onMounted(() => {
+      window.addEventListener('resize', resize)
+    })
+    
+    onDeactivated(() => {
+      window.removeEventListener('resize', resize)
     })
 
     return {
