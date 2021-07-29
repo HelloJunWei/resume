@@ -2,6 +2,8 @@
 
 使用 vue3 製作簡單的 resume website 並利用 github API 取得自己的 github 資訊
 
+網址: https://hellojunwei.github.io/resume/index.html
+
 ## Project setup
 ```
 npm install
