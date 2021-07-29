@@ -8,17 +8,20 @@
   </section>
   <TitleSection title="Github"/>
   <GithubPage />
+  <Footer />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import AOS from 'aos'
+
 import Banner from './components/Banner.vue'
 import BigBackground from './components/BigBackground.vue'
 import SelfInstruction from './components/SelfInstruction.vue'
 import TitleSection from './components/TitleSection.vue'
 import Experience from './components/Experience.vue'
 import GithubPage from './components/GithubPage.vue'
-import AOS from 'aos'
+import Footer from './components/Footer.vue'
 
 export default defineComponent({
   name: 'App',
@@ -28,7 +31,8 @@ export default defineComponent({
     TitleSection,
     SelfInstruction,
     Experience,
-    GithubPage
+    GithubPage,
+    Footer
   },
   setup () {
     AOS.init({

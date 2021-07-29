@@ -1,36 +1,24 @@
-
 <template>
   <section class="bg">
-    <div class="page-container">
-      <div class="card-row">
-        <div class="card" v-for="item in isOddData(false)" :key="item.id" data-aos="fade-right" data-aos-anchor-placement="top-bottom" @click="openLink(item.html_url)">
-          <img src="../assets/img/github_big.webp" alt="github" class="logo">
-          <hr>
-          <h1>{{ item.name }}</h1>
-          <p>{{ item.description }}</p>
-        </div>
-      </div>
-      <div class="card-row mt">
-        <div class="card" v-for="item in isOddData(true)" :key="item.id" data-aos="fade-left" data-aos-anchor-placement="top-bottom" @click="openLink(item.html_url)">
-          <img src="../assets/img/github_big.png" alt="github" class="logo">
-          <hr>
-          <h1>{{ item.name }}</h1>
-          <p>{{ item.description }}</p>
-        </div>
-      </div>
-    </div>
+    <DesktopGithubPage :githubData="githubData" v-if="width >= 756"/>
+    <MobileGithubPage :githubData="githubData"  v-else/>
   </section>
 </template>
 <script lang="ts">
-import { defineComponent, ref  } from 'vue';
+import { defineComponent, ref, provide  } from 'vue';
 import { getMyRepo, GithubData } from '../api';
+import DesktopGithubPage from './DesktopGithubPage.vue'
+import MobileGithubPage from './MobileGithubPage.vue'
 
 
 export default defineComponent({
   name: 'GithubPage',
   components: {
+    DesktopGithubPage,
+    MobileGithubPage
   },
   setup() {
+    const width = ref(window.innerWidth)
     let githubData = ref<Array<GithubData>>([])
 
     const init = async () => {
@@ -45,21 +33,15 @@ export default defineComponent({
       })
     }
 
-    const isOddData = (isOdd: boolean): Array<GithubData>  => {
-      const check = isOdd ? 1 : 0
-      return githubData.value.filter((val: GithubData, index: number) => {
-        if (index % 2 == check) return val
-      })
-    }
-    const openLink = (link: string): void => {
-      window.open(link)
-    }
-
     init()
+
+    provide('openLink', (url: string) => {
+      window.open(url)
+    })
+
     return {
       githubData,
-      isOddData,
-      openLink
+      width
     }
   }
 });
