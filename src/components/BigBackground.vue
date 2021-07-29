@@ -4,21 +4,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { tsParticles } from 'tsparticles';
+import { defineComponent } from 'vue'
+import { tsParticles } from 'tsparticles'
 export default defineComponent({
   name: 'BigBackground',
   setup () {
     tsParticles
     .loadJSON("big-background", "static/particles.json")
     .then((container) => {
-      console.log("callback - tsparticles config loaded" + container);
+      console.log("callback - tsparticles config loaded" + container)
     })
     .catch((error) => {
-      console.error(error);
-    });
+      alert('init particles fail' + error.message)
+    })
   }
-});
+})
 </script>
 
 <style>

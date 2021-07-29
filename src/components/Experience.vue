@@ -12,8 +12,8 @@
   </section>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { getExperience } from '../api';
+import { defineComponent, ref } from 'vue'
+import { getExperience } from '../api'
 
 // experience json 結構
 type ExperienceSubTitle = {
@@ -33,7 +33,7 @@ export default defineComponent({
   setup () {
     const experienceData =  ref<Array<ExperienceData>>([])
 
-    // get data 
+    // get data from json file.
     const init = async(): Promise<void> => {
       const data: any = await getExperience()
       data.forEach(( val: ExperienceData ) => {
@@ -47,7 +47,7 @@ export default defineComponent({
       experienceData
     }
   }
-});
+})
 </script>
 
 <style scoped>

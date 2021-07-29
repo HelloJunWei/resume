@@ -1,12 +1,14 @@
 <template>
   <section class="bg">
+    <!-- for desktop width -->
     <DesktopGithubPage :githubData="githubData" v-if="width >= 756"/>
+    <!-- for mobile width -->
     <MobileGithubPage :githubData="githubData"  v-else/>
   </section>
 </template>
 <script lang="ts">
-import { defineComponent, ref, provide, onMounted, onDeactivated  } from 'vue';
-import { getMyRepo, GithubData } from '../api';
+import { defineComponent, ref, provide, onMounted, onDeactivated  } from 'vue'
+import { getMyRepo, GithubData } from '../api'
 import DesktopGithubPage from './DesktopGithubPage.vue'
 import MobileGithubPage from './MobileGithubPage.vue'
 
@@ -20,7 +22,8 @@ export default defineComponent({
   setup() {
     const width = ref(window.innerWidth)
     let githubData = ref<Array<GithubData>>([])
-
+    
+    // get data from github api.
     const init = async () => {
       const data: any = await getMyRepo()
       data.sort((a: GithubData, b: GithubData) => b.id - a.id).forEach((val: GithubData) => {
@@ -55,7 +58,7 @@ export default defineComponent({
       width
     }
   }
-});
+})
 </script>
 
 <style scoped>

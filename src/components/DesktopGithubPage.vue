@@ -19,8 +19,8 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, toRefs, PropType, inject  } from 'vue';
-import { GithubData } from '../api';
+import { defineComponent, toRefs, PropType, inject  } from 'vue'
+import { GithubData } from '../api'
 
 
 export default defineComponent({
@@ -48,7 +48,7 @@ export default defineComponent({
       openLink
     }
   }
-});
+})
 </script>
 
 <style scoped>

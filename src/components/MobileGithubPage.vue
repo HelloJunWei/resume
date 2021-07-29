@@ -28,7 +28,7 @@ export default defineComponent({
   setup() {
     const initSwiper = () => {
       setTimeout(() => {
-        const swiper = new Swiper('.swiper-container', {
+        new Swiper('.swiper-container', {
           spaceBetween: 30,
           loop: true,
           speed: 1000,
@@ -55,7 +55,7 @@ export default defineComponent({
       openLink
     }
   }
-});
+})
 </script>
 
 <style scoped>

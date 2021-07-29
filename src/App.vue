@@ -3,16 +3,16 @@
   <Banner />
   <SelfInstruction />
   <TitleSection title="工作經驗"/>
-  <section class="content">
+  <GeomertyBackground>
     <Experience />
-  </section>
+  </GeomertyBackground>
   <TitleSection title="Github"/>
   <GithubPage />
   <Footer />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 import AOS from 'aos'
 
 import Banner from './components/Banner.vue'
@@ -22,6 +22,7 @@ import TitleSection from './components/TitleSection.vue'
 import Experience from './components/Experience.vue'
 import GithubPage from './components/GithubPage.vue'
 import Footer from './components/Footer.vue'
+import GeomertyBackground from './components/GeometryBackground.vue'
 
 export default defineComponent({
   name: 'App',
@@ -30,38 +31,23 @@ export default defineComponent({
     BigBackground,
     TitleSection,
     SelfInstruction,
+    GeomertyBackground,
     Experience,
     GithubPage,
     Footer
   },
   setup () {
+    // init AOS
     AOS.init({
       duration: 600,
     })
   }
-});
+})
 </script>
 
 <style>
 #app {
   margin: 0;
   font-family: Roboto,sans-serif !important;
-}
-.content{
-  margin-bottom: 100px;
-  max-width: 100%;
-  margin: 0;
-  z-index: 1;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #E2DFDA;
-  background-size: contain;
-  background-attachment: fixed;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  background-position: center center;
-  background-repeat: repeat-y;
-  padding-bottom: 110px;
-  background-image: url('./assets/img/price.svg');
 }
 </style>

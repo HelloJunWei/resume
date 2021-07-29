@@ -1,12 +1,12 @@
 import axios from 'axios'
 
 interface Params {
-  params?: object;
+  params?: object
 }
 type restfulMethods = 'get' | 'post' | 'delete' | 'option'
 
 const myAxios = axios.create({
-  headers: { 'Content-Type': 'application/json', 'Authorization': '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' }
+  headers: { 'Content-Type': 'application/json' }
 })
 
 // 針對response 處理
