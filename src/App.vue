@@ -7,6 +7,7 @@
     <Experience />
   </section>
   <TitleSection title="Github"/>
+  <GithubPage />
 </template>
 
 <script lang="ts">
@@ -16,6 +17,9 @@ import BigBackground from './components/BigBackground.vue'
 import SelfInstruction from './components/SelfInstruction.vue'
 import TitleSection from './components/TitleSection.vue'
 import Experience from './components/Experience.vue'
+import GithubPage from './components/GithubPage.vue'
+import AOS from 'aos'
+
 export default defineComponent({
   name: 'App',
   components: {
@@ -24,7 +28,11 @@ export default defineComponent({
     TitleSection,
     SelfInstruction,
     Experience,
+    GithubPage
   },
+  setup () {
+    AOS.init()
+  }
 });
 </script>
 
