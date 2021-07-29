@@ -1,4 +1,6 @@
-# github_repo
+# resume
+
+使用 vue3 製作簡單的 resume website 並利用 github API 取得自己的 github 資訊
 
 ## Project setup
 ```
